@@ -1,0 +1,250 @@
+@font-face {
+    font-family: 'Lexend';
+    src: url('../assets/fonts/Lexend.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LexendDeca';
+    src: url('../assets/fonts/LexendDeca.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LexendExa';
+    src: url('../assets/fonts/LexendExa.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #212529;
+    color: #F8F9FA;
+    font-family: 'Lexend';
+}
+
+/* INTRODUCTION */
+.introduction-text h1 {
+    font-size: 6vw;
+    color: #DA5759;
+    margin: 0;
+    font-family: 'LexendDeca';
+}
+
+.opening-section img {
+    width: 28.5vw;
+    height: auto;
+}
+
+.opening-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: right;
+    padding: 10vw;
+    padding-bottom: 0%;
+    max-width: 80vw;
+    margin: 0 auto;
+    height: auto;
+}
+
+.introduction-text {
+    font-size: 1.7vw;
+    max-width: 50vw;
+    padding-top: 2vw;
+    margin: 0px;
+}
+
+.introduction-text p {
+    margin: 0px;
+}
+
+/* PROJECTS AND EXPERIENCES */
+.section-titles {
+    font: bold;
+    font-family: 'LexendExa';
+    font-size: 4vw;
+    text-align: center;
+    margin-bottom: 5vw;
+    color: #DEE2E6;
+}
+
+.project-list {
+    display: flex;
+    justify-content: center;
+    gap: 7vw;
+    font-size: 1.5vw;
+    text-align: center;
+}
+
+.project-list a {
+    padding: 2vw;
+}
+
+.project-card {
+    display:  flex;
+    width: 20vw;
+    height: 12vw;
+    background-color: #6C757D;
+    border-radius: 2vw;
+    box-shadow: 0.5vw 0.5vw 1vw rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+    margin-bottom: 5vw;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #DEE2E6;
+    text-align: center;
+}
+
+.project-card:hover {
+    transform: translateY(-0.5vw);
+}
+
+section {
+    background-color: #495057;
+    padding-top: 5vw;
+    padding-bottom: 0;
+}
+
+.experience-list img {
+    max-width: 17vw;
+    box-shadow: 0.5vw 0.5vw 1vw rgba(0, 0, 0, 0.3);
+}
+
+
+.experience-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5vw;
+    justify-content: center;
+    align-items: center;
+    padding: 2vw;
+}
+
+.experience-list p {
+    max-width: 50vw;
+    text-align: justify;
+}
+
+/* CONTACTS */
+.contacts h2 {
+    font: bold;
+    font-family: 'LexendExa';
+    font-size: 5vw;
+    padding-right: 27vw;
+    padding-left: 2vw;
+    /* border: 2px solid; */
+}
+
+.contacts {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+
+.contacts img{
+    width: 4vw;
+    padding: 1vw;
+}
+
+/* untuk tab */
+@media screen and (max-width: 1100px) {
+    .experience-list {
+        flex-wrap: wrap;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2vw;
+        gap: 1vw;
+        padding-bottom: 5vw;
+        /* border: 2px solid; */
+    }
+
+    .experience-list img {
+        max-width: 25vw;
+        box-shadow: 0.5vw 0.5vw 1vw rgba(0, 0, 0, 0.3);
+        /* border: 2px solid; */
+    }
+
+    .experience-list p {
+        max-width: 80vw;
+        font-size: 1.7vw;
+        text-align: justify;
+        /* border: 2px solid; */
+    }
+
+}
+
+/* untuk mobile phone */
+@media screen and (max-width: 700px) {
+
+    .project-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2vw;
+        font-size: 1.7vw;
+        text-align: center;
+    }
+
+    .introduction-text h1 {
+        font-size: 9vw;
+        color: #DA5759;
+        margin: 0;
+        font-family: 'LexendDeca';
+    }
+
+    .introduction-text {
+        font-size: 3vw;
+        max-width: 50vw;
+        padding-top: 2vw;
+        margin: 0px;
+    }
+
+    .section-titles {
+        font: bold;
+        font-family: 'LexendExa';
+        font-size: 6vw;
+        text-align: center;
+        color: #DEE2E6;
+        margin-bottom: 6vw;
+    }
+
+    .project-card {
+        display:  flex;
+        width: 30vw;
+        height: 18vw;
+        background-color: #6C757D;
+        border-radius: 2vw;
+        box-shadow: 0.5vw 0.5vw 1vw rgba(0, 0, 0, 0.3);
+        transition: transform 0.2s;
+        margin-bottom: 5vw;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: #DEE2E6;
+        text-align: center;
+    }
+
+    .project-list {
+        display: flex;
+        justify-content: center;
+        gap: 1vw;
+        font-size: 2vw;
+        text-align: center;
+    }
+    
+    .project-list a {
+        padding: 2vw;
+    }
+
+    .experience-list p {
+        max-width: 80vw;
+        font-size: 2vw;
+        text-align: justify;
+        /* border: 2px solid; */
+    }
+}
