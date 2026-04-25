@@ -7,7 +7,7 @@ export default function Home() {
       <Navbar />
       
       <div className="max-w-5xl mx-auto">
-        <section id="about" className="min-h-screen flex items-center justify-center border-t border-zinc-800/50 text-zinc-500">
+        <section id="home" className="min-h-screen flex items-center justify-center border-t border-zinc-800/50 text-zinc-500">
           <h2>Home Section (Coming Soon)</h2>
         </section>
         
