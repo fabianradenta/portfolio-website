@@ -1,5 +1,4 @@
-import Navbar from "../components/Navbar";
-import "./globals.css"
+import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import BentoAbout from "@/components/AboutBento";
 import Resume from "@/components/Resume";
