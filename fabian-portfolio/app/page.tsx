@@ -3,6 +3,9 @@ import "./globals.css"
 import Hero from "@/components/Hero";
 import BentoAbout from "@/components/AboutBento";
 import Resume from "@/components/Resume";
+import Projects from "@/components/Projects";
+import TechStack from "@/components/TechStack";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -10,20 +13,19 @@ export default function Home() {
       <Navbar />
       
       <div className="max-w-5xl mx-auto">
-        <Hero />  
-        <section id="about" className="pt-20">
+        <Hero />
+        <div id="about" className="pt-20">
           <BentoAbout />
           <Resume />
-        </section>
-        
-        <section id="projects" className="min-h-screen flex items-center justify-center border-t border-zinc-800/50 text-zinc-500">
-          <h2>Projects Section (Coming Soon)</h2>
-        </section>
-        
-        <section id="others" className="min-h-screen flex items-center justify-center border-t border-zinc-800/50 text-zinc-500">
-          <h2>Others Section (Coming Soon)</h2>
-        </section>
+        </div>
+        <div id="projects" className="pt-20">
+          <Projects />
+        </div>
+        <div id="others" className="pt-20">
+          <TechStack />
+        </div>
       </div>
+      <Footer />
     </main>
   );
 }
