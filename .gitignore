@@ -1,0 +1,3 @@
+# macOS Finder metadata. The app's own .gitignore covers fabian-portfolio/;
+# this catches the repo root, which has no other ignore rules.
+.DS_Store
