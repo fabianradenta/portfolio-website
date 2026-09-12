@@ -1,13 +1,157 @@
 @import "tailwindcss";
 @source "../components";
 
-:root {
-  --background: #09090b; 
-  --foreground: #fafafa; 
+@theme {
+  /* near-black ground, lifted card surface, hairline borders, one accent */
+  --color-ground: #09090b;
+  --color-surface: #121214;
+  --color-surface-raised: #17171a;
+  --color-line: #1e1e23;
+  --color-line-strong: #2c2c33;
+  --color-ink: #fafafa;
+  --color-muted: #a1a1aa;
+  --color-faint: #71717a;
+  --color-accent: #f97316;
+
+  --radius-card: 1.5rem;
+  --radius-tile: 1rem;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+html {
+  /* Offsets anchor targets so the fixed navbar never covers a heading. */
+  scroll-padding-top: 6rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  scroll-behavior: smooth; 
+  background: var(--color-ground);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #09090b;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Background grain. Keep the contrast low, it should never read as a graphic. */
+.grid-texture {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 35%, #000 10%, transparent 100%);
+  -webkit-mask-image: radial-gradient(
+    ellipse 70% 60% at 50% 35%,
+    #000 10%,
+    transparent 100%
+  );
+}
+
+/* Section reveal. The hidden state is in the keyframe, not the resting style,
+   so anything never marked visible (no JS, a crawler) still renders fine. */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal[data-visible="true"] {
+    animation: reveal-in 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}
+
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Skills marquee. Track holds the row 3x, translating by a third loops it
+   seamlessly. Hover pauses. */
+.marquee-viewport {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+}
+
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.333%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-33.333%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-left var(--marquee-duration, 46s) linear infinite;
+}
+
+.marquee-track[data-direction="right"] {
+  animation-name: marquee-right;
+}
+
+.marquee-row:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Stopping mid-keyframe would leave the row offset, so reset it and let the
+     user scroll it by hand instead. */
+  .marquee-track {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .marquee-viewport {
+    overflow-x: auto;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
 }

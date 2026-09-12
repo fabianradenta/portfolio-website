@@ -1,30 +1,19 @@
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import BentoAbout from "@/components/AboutBento";
-import Resume from "@/components/Resume";
-import Projects from "@/components/Projects";
-import TechStack from "@/components/TechStack";
-import Footer from "@/components/Footer";
+import SelectedWork from "@/components/SelectedWork";
+import Experience from "@/components/Experience";
+import BeyondTheCode from "@/components/BeyondTheCode";
+import Skills from "@/components/Skills";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <Navbar />
-      
-      <div className="max-w-5xl mx-auto">
-        <Hero />
-        <div id="about" className="pt-20">
-          <BentoAbout />
-          <Resume />
-        </div>
-        <div id="projects" className="pt-20">
-          <Projects />
-        </div>
-        <div id="others" className="pt-20">
-          <TechStack />
-        </div>
-      </div>
-      <Footer />
+    <main>
+      <Hero />
+      <SelectedWork />
+      <Experience />
+      <BeyondTheCode />
+      <Skills />
+      <Contact />
     </main>
   );
 }

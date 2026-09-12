@@ -1,36 +1,55 @@
-"use client";
+import Link from "next/link";
+import { ArrowDownRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-      <div className="absolute inset-0 bg-[#09090b] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,transparent_10%,#000_100%)]"></div>
+    <section id="home" className="relative overflow-hidden">
+      <div
+        aria-hidden="true"
+        className="grid-texture pointer-events-none absolute inset-0"
+      />
 
-      {/* Konten Utama */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6">
-          Hey, there! <br />
-          I&apos;m <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-200 to-zinc-500">Fabian Radenta Bangun.</span>
-        </h1>
-        <p className="text-lg md:text-xl text-zinc-400 max-w-3xl mx-auto mb-10 leading-relaxed">
-          Informatics Engineering student at ITB specializing in Artificial Intelligence. Building a strong foundation in software engineering and algorithms, and currently preparing to build my first real-world applications.
+      <div className="relative mx-auto w-full max-w-6xl px-6 pt-32 pb-20 md:px-10 md:pt-40 md:pb-28">
+        <p className="flex items-center gap-3 text-[15px] text-muted">
+          <span aria-hidden="true" className="h-px w-7 bg-accent" />
+          Hey, there!
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a 
-            href="#projects" 
-            className="w-full sm:w-auto px-8 py-3.5 bg-zinc-50 text-black rounded-full font-semibold hover:bg-zinc-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+        <h1 className="mt-5 max-w-4xl text-[2.5rem] leading-[1.05] font-semibold tracking-[-0.03em] text-balance sm:text-6xl lg:text-[4rem]">
+          I&apos;m Fabian Radenta Bangun<span className="text-accent">.</span>
+        </h1>
+
+        <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ink/90 md:text-xl">
+          Software Engineer building practical systems across AI, mobile, web, and
+          edge computing.
+        </p>
+
+        <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-muted">
+          Informatics Engineering graduate from Institut Teknologi Bandung, working
+          from AI systems on constrained hardware through to mobile and web
+          applications.
+        </p>
+
+        <div className="mt-11 flex flex-wrap items-center gap-4">
+          <Link
+            href="#work"
+            className="group inline-flex items-center gap-2.5 rounded-full bg-ink px-7 py-3.5 text-[15px] font-medium text-ground transition-colors hover:bg-white"
           >
-            View Projects
-          </a>
-          <a 
-            href="#about" 
-            className="w-full sm:w-auto px-8 py-3.5 bg-transparent border border-zinc-700 text-white rounded-full font-semibold hover:bg-zinc-800 transition-all"
+            View My Work
+            <ArrowDownRight
+              size={16}
+              strokeWidth={2}
+              aria-hidden="true"
+              className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5"
+            />
+          </Link>
+          <Link
+            href="#about"
+            className="rounded-full border border-line-strong px-7 py-3.5 text-[15px] font-medium text-ink transition-colors hover:border-accent hover:text-accent"
           >
             About Me
-          </a>
+          </Link>
         </div>
-
       </div>
     </section>
   );
